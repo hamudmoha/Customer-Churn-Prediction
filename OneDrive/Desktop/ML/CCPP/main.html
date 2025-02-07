@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Churn Prediction</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Churn Prediction</h1>
+    <form id="customerForm">
+      <div class="form-group">
+        <label for="gender">Gender:</label><br>
+        <label class="radio-container">Male
+          <input type="radio" name="gender" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Female
+          <input type="radio" name="gender" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="SeniorCitizen">Senior Citizen:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="SeniorCitizen" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="SeniorCitizen" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="Partner">Partner:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="Partner" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="Partner" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="Dependents">Dependents:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="Dependents" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="Dependents" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="tenure">Tenure:</label>
+        <input type="number" id="tenure" required>
+      </div>
+
+      <div class="form-group">
+        <label for="PhoneService">Phone Service:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="PhoneService" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="PhoneService" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="MultipleLines">Multiple Lines:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="MultipleLines" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="MultipleLines" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="InternetService">Internet Service:</label><br>
+        <label class="radio-container">DSL
+          <input type="radio" name="InternetService" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Fiber Optic
+          <input type="radio" name="InternetService" value="2" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="InternetService" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="OnlineSecurity">Online Security:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="OnlineSecurity" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="OnlineSecurity" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="OnlineBackup">Online Backup:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="OnlineBackup" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="OnlineBackup" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="DeviceProtection">Device Protection:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="DeviceProtection" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="DeviceProtection" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="TechSupport">Tech Support:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="TechSupport" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="TechSupport" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="StreamingTV">Streaming TV:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="StreamingTV" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="StreamingTV" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="StreamingMovies">Streaming Movies:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="StreamingMovies" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="StreamingMovies" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="Contract">Contract:</label><br>
+        <label class="radio-container">Month-to-month
+          <input type="radio" name="Contract" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">One year
+          <input type="radio" name="Contract" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Two year
+          <input type="radio" name="Contract" value="2" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="PaperlessBilling">Paperless Billing:</label><br>
+        <label class="radio-container">Yes
+          <input type="radio" name="PaperlessBilling" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">No
+          <input type="radio" name="PaperlessBilling" value="0" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="PaymentMethod">Payment Method:</label><br>
+        <label class="radio-container">Electronic Check
+          <input type="radio" name="PaymentMethod" value="1" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Mailed Check
+          <input type="radio" name="PaymentMethod" value="2" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Bank Transfer
+          <input type="radio" name="PaymentMethod" value="3" required>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Credit Card
+          <input type="radio" name="PaymentMethod" value="4" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="MonthlyCharges">Monthly Charges:</label>
+        <input type="number" id="MonthlyCharges" required>
+      </div>
+
+      <div class="form-group">
+        <label for="TotalCharges">Total Charges:</label>
+        <input type="number" id="TotalCharges" required>
+      </div>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
